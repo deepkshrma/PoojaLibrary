@@ -38,7 +38,7 @@ export default function Navbar() {
             className="w-10 h-10 rounded-full shadow-md"
           />
           <Link to="/" onClick={() => setMenuOpen(false)}>
-            <h1 className="text-2xl font-extrabold bg-gradient-to-r from-yellow-400 via-[#F9832B] to-orange-600 text-transparent bg-clip-text text-shadow-lg cursor-pointer">
+            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 via-[#F9832B] to-orange-600 text-transparent bg-clip-text text-shadow-lg cursor-pointer">
               Pooja Library
             </h1>
           </Link>
@@ -101,7 +101,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="absolute top-full right-4 mt-2 w-48 bg-white rounded-xl shadow-lg z-50 p-6"
+              className="absolute top-full right-4  w-48 bg-white rounded-xl shadow-lg z-50 p-6"
             >
               <nav className="space-y-5 text-lg font-medium">
                 {[
