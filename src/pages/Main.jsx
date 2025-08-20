@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaWhatsapp, FaInstagram, FaArrowUp, FaWifi, FaParking, FaNewspaper, FaVideo, FaSnowflake, FaTint, FaUtensils } from "react-icons/fa";
 import bannerimage from "../assets/images/front-night.jpg";
 
-export default function Home() {
+export default function Main() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToTop = () => {
