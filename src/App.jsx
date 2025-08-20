@@ -1,5 +1,5 @@
 import React from 'react';
-import Allroutes from './allroutes';
+import Allroutes from './Allroutes'
 
 
 function App() {
