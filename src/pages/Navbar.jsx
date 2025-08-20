@@ -76,28 +76,28 @@ export default function Navbar() {
               animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black backdrop-blur-sm z-40"
+              className="fixed inset-0  z-40"
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* Sidebar */}
+            {/* dropdown */}
             <motion.aside
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="fixed top-0 right-0 w-64 h-full bg-white shadow-2xl z-50 p-6 flex flex-col"
+              initial={{ y: -10 }}
+              animate={{ y: 0 }}
+              exit={{ y: -10 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="fixed top-16 right-0 w-40 h-auto bg-white shadow-2xl z-50 p-6 flex flex-col"
             >
               {/* Close Button */}
-              <button
+              {/* <button
                 className="self-end text-2xl text-gray-700 hover:text-[#F9832B] transition"
                 onClick={() => setMenuOpen(false)}
               >
                 <FaTimes />
-              </button>
+              </button> */}
 
               {/* Sidebar Menu Links */}
-              <nav className="mt-10 space-y-6 text-lg font-medium">
+              <nav className=" space-y-6 text-lg font-medium">
                 <Link
                   to="/"
                   onClick={() => setMenuOpen(false)}
