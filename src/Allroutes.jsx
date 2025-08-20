@@ -7,11 +7,13 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Main from "./pages/Main";
 import Footer from "./pages/Footer";
+import ScrollToTop from "./pages/ScrollToTop";
 
 
 function Allroutes() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Main />} />
