@@ -7,15 +7,28 @@ import {
   FaInfoCircle,
   FaPhoneAlt,
   FaBars,
-  FaTimes,
 } from "react-icons/fa";
-import logoimage from "../assets/images/front-night.jpg";
+import logoimage from "../assets/images/mandir.jpg";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Variants for stagger animation
+  const listVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1, // stagger each item
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-white  shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo and Name */}
         <div className="flex items-center space-x-3">
@@ -24,9 +37,11 @@ export default function Navbar() {
             alt="Pooja Library Logo"
             className="w-10 h-10 rounded-full shadow-md"
           />
-          <h1 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 via-[#F9832B] to-orange-600 text-transparent bg-clip-text text-shadow-lg">
-            Pooja Library
-          </h1>
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            <h1 className="text-2xl font-extrabold bg-gradient-to-r from-yellow-400 via-[#F9832B] to-orange-600 text-transparent bg-clip-text text-shadow-lg cursor-pointer">
+              Pooja Library
+            </h1>
+          </Link>
         </div>
 
         {/* Desktop Menu */}
@@ -66,66 +81,58 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Sidebar Drawer + Backdrop */}
+      {/* Mobile Dropdown */}
       <AnimatePresence>
         {menuOpen && (
           <>
             {/* Backdrop overlay */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0  z-40"
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 bg-black z-40"
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* dropdown */}
+            {/* Dropdown Menu */}
             <motion.aside
-              initial={{ y: -10 }}
-              animate={{ y: 0 }}
-              exit={{ y: -10 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="fixed top-16 right-0 w-40 h-auto bg-white shadow-2xl z-50 p-6 flex flex-col"
+              className="absolute top-full right-4 mt-2 w-48 bg-white rounded-xl shadow-lg z-50 p-6"
             >
-              {/* Close Button */}
-              {/* <button
-                className="self-end text-2xl text-gray-700 hover:text-[#F9832B] transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                <FaTimes />
-              </button> */}
-
-              {/* Sidebar Menu Links */}
-              <nav className=" space-y-6 text-lg font-medium">
-                <Link
-                  to="/"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#F9832B] transition"
-                >
-                  <FaHome /> Home
-                </Link>
-                <Link
-                  to="/gallery"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#F9832B] transition"
-                >
-                  <FaImages /> Gallery
-                </Link>
-                <Link
-                  to="/about"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#F9832B] transition"
-                >
-                  <FaInfoCircle /> About
-                </Link>
-                <Link
-                  to="/contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#F9832B] transition"
-                >
-                  <FaPhoneAlt /> Contact
-                </Link>
+              <nav className="space-y-5 text-lg font-medium">
+                {[
+                  { to: "/", label: "Home", icon: <FaHome /> },
+                  { to: "/gallery", label: "Gallery", icon: <FaImages /> },
+                  { to: "/about", label: "About", icon: <FaInfoCircle /> },
+                  { to: "/contact", label: "Contact", icon: <FaPhoneAlt /> },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.to}
+                    variants={listVariants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={i}
+                  >
+                    <Link
+                      to={item.to}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center gap-3 text-gray-700 hover:text-[#F9832B] transition"
+                    >
+                      {/* icon with little bounce */}
+                      <motion.span
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      >
+                        {item.icon}
+                      </motion.span>
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
               </nav>
             </motion.aside>
           </>
