@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaInstagram, FaArrowUp, FaWifi, FaParking, FaNewspaper, FaVideo, FaSnowflake, FaTint, FaUtensils } from "react-icons/fa";
-import bannerimage from "../assets/images/bannerimage.jpg";
+import bannerimage from "../assets/images/front-night.jpg";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,14 +13,14 @@ export default function Home() {
   return (
     <div className="font-sans bg-gray-50 text-gray-800">
       {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      {/* <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <h1 className="text-2xl font-bold text-purple-700">📚 Pooja Library</h1>
+          <h1 className="text-2xl font-bold text-[#F9832B]">📚 Pooja Library</h1>
           <nav className="hidden md:flex space-x-6">
-            <a href="#about" className="hover:text-purple-600 transition">About</a>
-            <a href="#facilities" className="hover:text-purple-600 transition">Facilities</a>
-            <a href="#gallery" className="hover:text-purple-600 transition">Gallery</a>
-            <a href="#contact" className="hover:text-purple-600 transition">Contact</a>
+            <a href="#about" className="hover:text-[#F9832B] transition">About</a>
+            <a href="#facilities" className="hover:text-[#F9832B] transition">Facilities</a>
+            <a href="#gallery" className="hover:text-[#F9832B] transition">Gallery</a>
+            <a href="#contact" className="hover:text-[#F9832B] transition">Contact</a>
           </nav>
           <button
             className="md:hidden text-2xl text-purple-700"
@@ -31,13 +31,13 @@ export default function Home() {
         </div>
         {menuOpen && (
           <div className="md:hidden bg-purple-100 p-4 space-y-3 text-center">
-            <a href="#about" className="block text-purple-700 font-medium" onClick={() => setMenuOpen(false)}>About</a>
-            <a href="#facilities" className="block text-purple-700 font-medium" onClick={() => setMenuOpen(false)}>Facilities</a>
-            <a href="#gallery" className="block text-purple-700 font-medium" onClick={() => setMenuOpen(false)}>Gallery</a>
-            <a href="#contact" className="block text-purple-700 font-medium" onClick={() => setMenuOpen(false)}>Contact</a>
+            <a href="#about" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#facilities" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>Facilities</a>
+            <a href="#gallery" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>Gallery</a>
+            <a href="#contact" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>Contact</a>
           </div>
         )}
-      </header>
+      </header> */}
 
       {/* Hero Section */}
       <section
@@ -54,7 +54,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-16 max-w-5xl mx-auto px-4 text-center">
-        <h3 className="text-3xl font-semibold mb-6 text-purple-700">About Us</h3>
+        <h3 className="text-3xl font-semibold mb-6 text-[#F9832B]">About Us</h3>
         <p className="text-lg leading-relaxed">
           Pooja Library is a community-driven space dedicated to readers and learners.
           Our collection ranges from ancient scriptures to modern-day knowledge, creating
@@ -64,7 +64,7 @@ export default function Home() {
 
       {/* Facilities Section */}
       <section id="facilities" className="py-16 bg-gradient-to-r from-purple-50 to-purple-100">
-        <h3 className="text-3xl font-semibold mb-10 text-center text-purple-700">Our Facilities</h3>
+        <h3 className="text-3xl font-semibold mb-10 text-center text-[#F9832B]">Our Facilities</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
           {[ 
             { icon: <FaTint size={32} className="text-blue-500" />, title: "Water Cooler" },
@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* Gallery Section */}
       <section id="gallery" className="py-16 bg-gray-100">
-        <h3 className="text-3xl font-semibold mb-10 text-center text-purple-700">Gallery</h3>
+        <h3 className="text-3xl font-semibold mb-10 text-center text-[#F9832B]">Gallery</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
           {[1, 2, 3, 4, 5, 6].map((img) => (
             <motion.div key={img} whileHover={{ scale: 1.05 }} className="overflow-hidden rounded-2xl shadow-lg">
@@ -105,7 +105,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-16 max-w-4xl mx-auto px-4 text-center">
-        <h3 className="text-3xl font-semibold mb-6 text-purple-700">Contact Us</h3>
+        <h3 className="text-3xl font-semibold mb-6 text-[#F9832B]">Contact Us</h3>
         <p className="text-lg mb-6">Want to know more? Reach us on WhatsApp!</p>
         <a
           href="https://wa.me/916367007879"
