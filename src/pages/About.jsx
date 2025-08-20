@@ -1,4 +1,3 @@
-// src/pages/About.jsx
 import { motion } from "framer-motion";
 import { FaBookReader, FaCalendarAlt, FaUsers } from "react-icons/fa";
 import { useEffect, useState } from "react";

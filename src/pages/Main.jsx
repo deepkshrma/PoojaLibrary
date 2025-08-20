@@ -3,13 +3,10 @@ import { motion } from "framer-motion";
 import {
   FaWifi,
   FaParking,
-  FaNewspaper,
   FaVideo,
   FaSnowflake,
   FaRestroom,
   FaChair,
-  FaTint,
-  FaUtensils,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import bannerimage from "../assets/images/front.jpg";
@@ -55,7 +52,6 @@ export default function Main() {
         >
           Facilities
         </motion.h3>
-        {/* 🔹 Mobile par bhi 2-2 cards ek saath */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
           {[
             {
@@ -87,7 +83,6 @@ export default function Main() {
               key={idx}
               className="bg-white p-6 rounded-2xl shadow-md flex flex-col items-center text-center space-y-4 hover:scale-105 transition"
             >
-              {/* 👉 Icon par hi motion effect */}
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{
@@ -107,7 +102,7 @@ export default function Main() {
           ))}
         </div>
 
-        {/* 🔹 Attractive CTA Section below Facilities */}
+        {/*  Attractive CTA Section below Facilities */}
         <div className="mt-16 ">
           <h6 className="text-xl font-semibold text-gray-500 mb-6 pl-6">
             Explore More with Pooja Library
@@ -121,7 +116,7 @@ export default function Main() {
               <motion.div
                 key={idx}
                 animate={{
-                  y: [0, -5, 0], // upar niche halka float
+                  y: [0, -5, 0],
                   boxShadow: [
                     "0px 4px 12px rgba(249, 131, 43, 0.2)",
                     "0px 6px 16px rgba(249, 131, 43, 0.4)",
@@ -132,7 +127,7 @@ export default function Main() {
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: idx * 0.5, // thoda stagger
+                  delay: idx * 0.5,
                 }}
                 whileHover={{ scale: 1.1 }}
               >
@@ -149,18 +144,6 @@ export default function Main() {
           </div>
         </div>
       </section>
-
-      {/* Floating Buttons
-      <div className="fixed bottom-5 right-5 flex flex-col space-y-3">
-        <a
-          href="https://wa.me/916367007879"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition flex items-center justify-center"
-        >
-          <FaWhatsapp size={28} />
-        </a>
-      </div> */}
     </div>
   );
 }

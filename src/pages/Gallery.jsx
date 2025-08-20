@@ -1,19 +1,17 @@
 import { motion } from "framer-motion";
-import { FaInstagram } from "react-icons/fa";
+
 // Import videos
 import mainVideo from "../assets/videos/mainvideo.mp4";
 import nearbyVideo from "../assets/videos/nearby.mp4";
 
 // Import images
-import inu2 from "../assets/images/ina2.jpg";
-import inu3 from "../assets/images/inu3.jpg";
 import outsideFront from "../assets/images/outside-front.jpg";
 import libraryDesk from "../assets/images/bannerimage.jpg";
 
 import mandir from "../assets/images/mandir.jpg";
 import mistan1 from "../assets/images/mistan1.jpg";
 import mistan2 from "../assets/images/mistan2.jpg";
-import jio from "../assets/images/jio.jpg";
+import jio from "../assets/images/outside-main.jpg";
 import inside1 from "../assets/images/inside1.jpg";
 import inside2 from "../assets/images/inside2.jpg";
 import inside3 from "../assets/images/inside3.jpg";
@@ -28,8 +26,8 @@ export default function Gallery() {
     inside1,
     inside2,
     inside5,
-    inside3,
     jio,
+    inside3,
   ];
   const nearbyImages = [mistan1, mistan2];
 
@@ -37,10 +35,6 @@ export default function Gallery() {
     <div className="pt-24 pb-1 bg-gray-200">
       {/* Main Auto-play Video */}
       <section className="max-w-6xl mx-auto px-4 mb-16">
-        {/* <h2 className="text-4xl font-bold text-center text-[#F9832B] mb-6">
-          🎥
-        </h2> */}
-
         <div>
           <video
             autoPlay

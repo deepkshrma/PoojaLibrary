@@ -1,4 +1,3 @@
-// src/components/PageWrapper.jsx
 import { motion } from "framer-motion";
 
 export default function PageWrapper({ children }) {
