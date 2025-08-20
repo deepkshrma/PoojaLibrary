@@ -89,7 +89,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition"
         >
-          <FaWhatsapp className="text-green-500 text-4xl mb-3" />
+          <FaWhatsapp className="text-green-500 text-4xl mb-3 animate-bounce" />
           <h3 className="text-xl font-semibold mb-2 text-gray-700">WhatsApp</h3>
           <a
             href="https://wa.me/916367007879"
@@ -105,11 +105,11 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center md:col-span-2 hover:shadow-2xl transition"
         >
-          <FaMapMarkedAlt className="text-[#F9832B] text-4xl mb-3" />
+          <FaMapMarkedAlt className="text-[#F9832B] text-4xl mb-3 " />
           <h3 className="text-xl font-semibold mb-2 text-gray-700">Location</h3>
           <p className="text-lg font-medium">
             📍 Pooja Library, Punana, Jaipur, Rajasthan 303701
