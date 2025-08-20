@@ -9,12 +9,28 @@ import inu2 from "../assets/images/ina2.jpg";
 import inu3 from "../assets/images/inu3.jpg";
 import outsideFront from "../assets/images/outside-front.jpg";
 import libraryDesk from "../assets/images/bannerimage.jpg";
-import libraryBookshelf from "../assets/images/mandir.jpg";
-import mistan1 from "../assets/images/outside-front.jpg";
-import mistan2 from "../assets/images/outside-front.jpg";
-
+ 
+import mandir from "../assets/images/mandir.jpg";
+import mistan1 from "../assets/images/mistan1.jpg";
+import mistan2 from "../assets/images/mistan2.jpg";
+import jio from "../assets/images/jio.jpg";
+import inside1 from "../assets/images/inside1.jpg";
+import inside2 from "../assets/images/inside2.jpg";
+import inside3 from "../assets/images/inside3.jpg";
+import inside4 from "../assets/images/inside4.jpg";
+import inside5 from "../assets/images/inside-main.jpg";
 export default function Gallery() {
-  const images = [inu2, inu3, outsideFront, libraryDesk, libraryBookshelf];
+  const images = [
+    mandir,
+    outsideFront,
+    inside4,
+    libraryDesk,
+    inside1,
+    inside2,
+    inside5,
+    inside3,
+    jio,
+  ];
   const nearbyImages = [mistan1, mistan2];
 
   return (
@@ -44,7 +60,7 @@ export default function Gallery() {
       {/* Image Section */}
       <section className="max-w-6xl mx-auto px-4 mb-16">
         <h3 className="text-3xl font-semibold text-[#F9832B] mb-6 text-center">
-          📷 Gallery
+          Gallery
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {images.map((img, idx) => (
@@ -93,20 +109,6 @@ export default function Gallery() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-6 text-center mt-10 flex flex-col items-center space-y-3">
-        <p>© {new Date().getFullYear()} Pooja Library. All Rights Reserved.</p>
-        <a
-          href="https://instagram.com/_deepk__shrma"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center space-x-2 text-pink-400 hover:text-pink-500"
-        >
-          <FaInstagram /> <span>@_deepk__shrma</span>
-        </a>
-        <p className="text-sm">Made by Deepak Sharma</p>
-      </footer>
     </div>
   );
 }

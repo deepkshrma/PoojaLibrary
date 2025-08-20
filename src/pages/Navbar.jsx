@@ -7,7 +7,6 @@ import {
   FaInfoCircle,
   FaPhoneAlt,
   FaBars,
-  FaTimes,
 } from "react-icons/fa";
 import logoimage from "../assets/images/front-night.jpg";
 
@@ -15,7 +14,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white  shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo and Name */}
         <div className="flex items-center space-x-3">
@@ -31,28 +30,16 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 font-medium">
-          <Link
-            to="/"
-            className="hover:text-[#F9832B] transition flex items-center gap-1"
-          >
+          <Link to="/" className="hover:text-[#F9832B] transition flex items-center gap-1">
             <FaHome /> Home
           </Link>
-          <Link
-            to="/gallery"
-            className="hover:text-[#F9832B] transition flex items-center gap-1"
-          >
+          <Link to="/gallery" className="hover:text-[#F9832B] transition flex items-center gap-1">
             <FaImages /> Gallery
           </Link>
-          <Link
-            to="/about"
-            className="hover:text-[#F9832B] transition flex items-center gap-1"
-          >
+          <Link to="/about" className="hover:text-[#F9832B] transition flex items-center gap-1">
             <FaInfoCircle /> About
           </Link>
-          <Link
-            to="/contact"
-            className="hover:text-[#F9832B] transition flex items-center gap-1"
-          >
+          <Link to="/contact" className="hover:text-[#F9832B] transition flex items-center gap-1">
             <FaPhoneAlt /> Contact
           </Link>
         </nav>
@@ -66,38 +53,29 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Sidebar Drawer + Backdrop */}
+      {/* Mobile Dropdown */}
       <AnimatePresence>
         {menuOpen && (
           <>
             {/* Backdrop overlay */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black backdrop-blur-sm z-40"
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 bg-black z-40"
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* Sidebar */}
+            {/* Dropdown Menu */}
             <motion.aside
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="fixed top-0 right-0 w-64 h-full bg-white shadow-2xl z-50 p-6 flex flex-col"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="absolute top-full right-4 mt-2 w-48 bg-white rounded-xl shadow-lg z-50 p-6"
             >
-              {/* Close Button */}
-              <button
-                className="self-end text-2xl text-gray-700 hover:text-[#F9832B] transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                <FaTimes />
-              </button>
-
-              {/* Sidebar Menu Links */}
-              <nav className="mt-10 space-y-6 text-lg font-medium">
+              <nav className="space-y-5 text-lg font-medium">
                 <Link
                   to="/"
                   onClick={() => setMenuOpen(false)}

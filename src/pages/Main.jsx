@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaInstagram, FaArrowUp, FaWifi, FaParking, FaNewspaper, FaVideo, FaSnowflake, FaTint, FaUtensils } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaArrowUp,
+  FaWifi,
+  FaParking,
+  FaNewspaper,
+  FaVideo,
+  FaSnowflake,
+  FaTint,
+  FaUtensils,
+} from "react-icons/fa";
 import bannerimage from "../assets/images/front-night.jpg";
 
 export default function Main() {
@@ -44,7 +55,12 @@ export default function Main() {
         className="h-screen flex flex-col justify-center items-center bg-cover bg-center text-white text-center px-4"
         style={{ backgroundImage: `url(${bannerimage})` }}
       >
-        <motion.h2 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-4xl md:text-6xl font-bold drop-shadow-lg">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-4xl md:text-6xl font-bold drop-shadow-lg"
+        >
           Welcome to Pooja Library
         </motion.h2>
         <p className="mt-4 text-lg md:text-xl max-w-xl drop-shadow">
@@ -56,24 +72,50 @@ export default function Main() {
       <section id="about" className="py-16 max-w-5xl mx-auto px-4 text-center">
         <h3 className="text-3xl font-semibold mb-6 text-[#F9832B]">About Us</h3>
         <p className="text-lg leading-relaxed">
-          Pooja Library is a community-driven space dedicated to readers and learners.
-          Our collection ranges from ancient scriptures to modern-day knowledge, creating
-          a bridge between tradition and innovation.
+          Pooja Library is a community-driven space dedicated to readers and
+          learners. Our collection ranges from ancient scriptures to modern-day
+          knowledge, creating a bridge between tradition and innovation.
         </p>
       </section>
 
       {/* Facilities Section */}
-      <section id="facilities" className="py-16 bg-gradient-to-r from-purple-50 to-purple-100">
-        <h3 className="text-3xl font-semibold mb-10 text-center text-[#F9832B]">Our Facilities</h3>
+      <section
+        id="facilities"
+        className="py-16 bg-gradient-to-r from-purple-50 to-purple-100"
+      >
+        <h3 className="text-3xl font-semibold mb-10 text-center text-[#F9832B]">
+          Our Facilities
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-          {[ 
-            { icon: <FaTint size={32} className="text-blue-500" />, title: "Water Cooler" },
-            { icon: <FaSnowflake size={32} className="text-cyan-500" />, title: "Air Conditioned" },
-            { icon: <FaWifi size={32} className="text-green-500" />, title: "Free WiFi" },
-            { icon: <FaParking size={32} className="text-indigo-500" />, title: "Parking Space" },
-            { icon: <FaNewspaper size={32} className="text-yellow-500" />, title: "Newspapers" },
-            { icon: <FaVideo size={32} className="text-red-500" />, title: "CCTV Cameras" },
-            { icon: <FaUtensils size={32} className="text-pink-500" />, title: "Nearby Mistan Bhandar" }
+          {[
+            {
+              icon: <FaTint size={32} className="text-blue-500" />,
+              title: "Water Cooler",
+            },
+            {
+              icon: <FaSnowflake size={32} className="text-cyan-500" />,
+              title: "Air Conditioned",
+            },
+            {
+              icon: <FaWifi size={32} className="text-green-500" />,
+              title: "Free WiFi",
+            },
+            {
+              icon: <FaParking size={32} className="text-indigo-500" />,
+              title: "Parking Space",
+            },
+            {
+              icon: <FaNewspaper size={32} className="text-yellow-500" />,
+              title: "Newspapers",
+            },
+            {
+              icon: <FaVideo size={32} className="text-red-500" />,
+              title: "CCTV Cameras",
+            },
+            {
+              icon: <FaUtensils size={32} className="text-pink-500" />,
+              title: "Nearby Mistan Bhandar",
+            },
           ].map((facility, idx) => (
             <motion.div
               key={idx}
@@ -81,7 +123,9 @@ export default function Main() {
               className="bg-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center space-y-4"
             >
               {facility.icon}
-              <h4 className="text-xl font-semibold text-gray-700">{facility.title}</h4>
+              <h4 className="text-xl font-semibold text-gray-700">
+                {facility.title}
+              </h4>
             </motion.div>
           ))}
         </div>
@@ -89,10 +133,16 @@ export default function Main() {
 
       {/* Gallery Section */}
       <section id="gallery" className="py-16 bg-gray-100">
-        <h3 className="text-3xl font-semibold mb-10 text-center text-[#F9832B]">Gallery</h3>
+        <h3 className="text-3xl font-semibold mb-10 text-center text-[#F9832B]">
+          Gallery
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
           {[1, 2, 3, 4, 5, 6].map((img) => (
-            <motion.div key={img} whileHover={{ scale: 1.05 }} className="overflow-hidden rounded-2xl shadow-lg">
+            <motion.div
+              key={img}
+              whileHover={{ scale: 1.05 }}
+              className="overflow-hidden rounded-2xl shadow-lg"
+            >
               <img
                 src={`https://source.unsplash.com/400x300/?library,books,${img}`}
                 alt="Library pic"
@@ -104,8 +154,13 @@ export default function Main() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 max-w-4xl mx-auto px-4 text-center">
-        <h3 className="text-3xl font-semibold mb-6 text-[#F9832B]">Contact Us</h3>
+      <section
+        id="contact"
+        className="py-16 max-w-4xl mx-auto px-4 text-center"
+      >
+        <h3 className="text-3xl font-semibold mb-6 text-[#F9832B]">
+          Contact Us
+        </h3>
         <p className="text-lg mb-6">Want to know more? Reach us on WhatsApp!</p>
         <a
           href="https://wa.me/916367007879"
@@ -134,15 +189,6 @@ export default function Main() {
           <FaArrowUp size={24} />
         </button>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-6 text-center mt-10 flex flex-col items-center space-y-3">
-        <p>© {new Date().getFullYear()} Pooja Library. All Rights Reserved.</p>
-        <a href="https://instagram.com/_deepk__shrma" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-pink-400 hover:text-pink-500">
-          <FaInstagram /> <span>@_deepk__shrma</span>
-        </a>
-        <p className="text-sm">Made by Deepak Sharma</p>
-      </footer>
     </div>
   );
 }

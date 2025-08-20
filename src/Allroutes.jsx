@@ -6,6 +6,7 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Main from "./pages/Main";
+import Footer from "./pages/Footer";
 
 
 function Allroutes() {
@@ -18,6 +19,7 @@ function Allroutes() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/footer" element={<Footer />} />
         </Route>
       </Routes>
     </Router>
