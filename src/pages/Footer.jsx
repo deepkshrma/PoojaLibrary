@@ -2,7 +2,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-6 text-center mt-10 flex flex-col items-center space-y-3">
+    <footer className="bg-gray-900 text-white py-6 text-center  flex flex-col items-center space-y-3">
       <p>© {new Date().getFullYear()} Pooja Library. All Rights Reserved.</p>
 
       <a
