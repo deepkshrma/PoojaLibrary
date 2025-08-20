@@ -34,7 +34,7 @@ export default function Gallery() {
   const nearbyImages = [mistan1, mistan2];
 
   return (
-    <div className="pt-24 pb-16 bg-gray-50">
+    <div className="pt-24 pb-1 bg-gray-200">
       {/* Main Auto-play Video */}
       <section className="max-w-6xl mx-auto px-4 mb-16">
         {/* <h2 className="text-4xl font-bold text-center text-[#F9832B] mb-6">
