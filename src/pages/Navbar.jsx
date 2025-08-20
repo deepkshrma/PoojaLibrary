@@ -15,7 +15,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-white  shadow-md z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo and Name */}
         <div className="flex items-center space-x-3">
@@ -31,16 +31,28 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 font-medium">
-          <Link to="/" className="hover:text-[#F9832B] transition flex items-center gap-1">
+          <Link
+            to="/"
+            className="hover:text-[#F9832B] transition flex items-center gap-1"
+          >
             <FaHome /> Home
           </Link>
-          <Link to="/gallery" className="hover:text-[#F9832B] transition flex items-center gap-1">
+          <Link
+            to="/gallery"
+            className="hover:text-[#F9832B] transition flex items-center gap-1"
+          >
             <FaImages /> Gallery
           </Link>
-          <Link to="/about" className="hover:text-[#F9832B] transition flex items-center gap-1">
+          <Link
+            to="/about"
+            className="hover:text-[#F9832B] transition flex items-center gap-1"
+          >
             <FaInfoCircle /> About
           </Link>
-          <Link to="/contact" className="hover:text-[#F9832B] transition flex items-center gap-1">
+          <Link
+            to="/contact"
+            className="hover:text-[#F9832B] transition flex items-center gap-1"
+          >
             <FaPhoneAlt /> Contact
           </Link>
         </nav>
