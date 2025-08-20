@@ -31,8 +31,7 @@ export default function Main() {
         <motion.h1
           className="text-center mt-2 text-3xl md:text-4xl font-extrabold"
           style={{
-            backgroundImage:
-              "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+            backgroundImage: "linear-gradient(90deg,#FACC15, #F9832B, #EA580C)",
             backgroundSize: "400% 400%",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -63,13 +62,34 @@ export default function Main() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
           {[
-            { icon: <FaSnowflake size={32} className="text-cyan-500" />, title: "Air Conditioned" },
-            { icon: <FaWifi size={32} className="text-green-500" />, title: "Free WiFi" },
-            { icon: <FaParking size={32} className="text-indigo-500" />, title: "Parking Space" },
-            { icon: <FaTint size={32} className="text-blue-500" />, title: "Water Cooler" },
-            { icon: <FaNewspaper size={32} className="text-yellow-500" />, title: "Newspapers" },
-            { icon: <FaVideo size={32} className="text-red-500" />, title: "CCTV Cameras" },
-            { icon: <FaUtensils size={32} className="text-pink-500" />, title: "Nearby Mistan Bhandar" },
+            {
+              icon: <FaSnowflake size={32} className="text-cyan-500" />,
+              title: "Air Conditioned",
+            },
+            {
+              icon: <FaWifi size={32} className="text-green-500" />,
+              title: "Free WiFi",
+            },
+            {
+              icon: <FaParking size={32} className="text-indigo-500" />,
+              title: "Parking Space",
+            },
+            {
+              icon: <FaTint size={32} className="text-blue-500" />,
+              title: "Water Cooler",
+            },
+            {
+              icon: <FaNewspaper size={32} className="text-yellow-500" />,
+              title: "Newspapers",
+            },
+            {
+              icon: <FaVideo size={32} className="text-red-500" />,
+              title: "CCTV Cameras",
+            },
+            {
+              icon: <FaUtensils size={32} className="text-pink-500" />,
+              title: "Nearby Mistan Bhandar",
+            },
           ].map((facility, idx) => (
             <motion.div
               key={idx}
