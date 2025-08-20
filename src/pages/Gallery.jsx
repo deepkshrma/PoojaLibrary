@@ -9,7 +9,7 @@ import inu2 from "../assets/images/ina2.jpg";
 import inu3 from "../assets/images/inu3.jpg";
 import outsideFront from "../assets/images/outside-front.jpg";
 import libraryDesk from "../assets/images/bannerimage.jpg";
- 
+
 import mandir from "../assets/images/mandir.jpg";
 import mistan1 from "../assets/images/mistan1.jpg";
 import mistan2 from "../assets/images/mistan2.jpg";
@@ -37,9 +37,9 @@ export default function Gallery() {
     <div className="pt-24 pb-16 bg-gray-50">
       {/* Main Auto-play Video */}
       <section className="max-w-6xl mx-auto px-4 mb-16">
-        <h2 className="text-4xl font-bold text-center text-[#F9832B] mb-6">
+        {/* <h2 className="text-4xl font-bold text-center text-[#F9832B] mb-6">
           🎥
-        </h2>
+        </h2> */}
 
         <div>
           <video
@@ -52,16 +52,50 @@ export default function Gallery() {
           />
         </div>
 
-        <p className="text-center mt-2 text-gray-700 font-medium">
-          Our Library Overview
-        </p>
+        <motion.p
+          className="text-center mt-2 text-2xl font-extrabold"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+            backgroundSize: "400% 400%",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          animate={{
+            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          library overview
+        </motion.p>
       </section>
 
       {/* Image Section */}
       <section className="max-w-6xl mx-auto px-4 mb-16">
-        <h3 className="text-3xl font-semibold text-[#F9832B] mb-6 text-center">
+        <motion.p
+          className="text-center mt-2 text-2xl font-extrabold"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+            backgroundSize: "400% 400%",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          animate={{
+            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
           Gallery
-        </h3>
+        </motion.p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {images.map((img, idx) => (
             <motion.img
@@ -77,9 +111,26 @@ export default function Gallery() {
 
       {/* Nearby Section */}
       <section className="max-w-6xl mx-auto px-4 mb-16">
-        <h3 className="text-3xl font-semibold text-[#F9832B] mb-6 text-center">
-          🍛 Nearby Attractions
-        </h3>
+        <motion.p
+          className="text-center mt-2 text-2xl font-extrabold"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+            backgroundSize: "400% 400%",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          animate={{
+            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          Nearby Attractions
+        </motion.p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Video */}
           <div className="rounded-xl shadow-lg overflow-hidden">
@@ -90,9 +141,26 @@ export default function Gallery() {
               className="w-full h-72 object-cover"
               src={nearbyVideo}
             />
-            <p className="text-center mt-2 text-gray-700 font-medium">
-              Mistan Bhandar
-            </p>
+            <motion.p
+              className="text-center mt-2 text-2xl font-extrabold"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+                backgroundSize: "400% 400%",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              Ganpati mistan bhandar
+            </motion.p>
           </div>
 
           {/* Nearby Images */}

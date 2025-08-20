@@ -5,17 +5,26 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 flex flex-col items-center px-6 py-20">
       {/* Page Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-extrabold mb-12 text-center 
-        bg-gradient-to-r from-yellow-400 via-[#F9832B] to-orange-600 
-        text-transparent bg-clip-text drop-shadow-md"
+      <motion.p
+        className="text-center mt-2 text-2xl font-extrabold"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+          backgroundSize: "400% 400%",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+        animate={{
+          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+        }}
       >
         Contact Us
-      </motion.h1>
+      </motion.p>
 
       {/* Map Embed */}
       <motion.div

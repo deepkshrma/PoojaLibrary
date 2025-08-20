@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaWhatsapp,
-  FaInstagram,
   FaArrowUp,
   FaWifi,
   FaParking,
@@ -12,6 +11,7 @@ import {
   FaTint,
   FaUtensils,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import bannerimage from "../assets/images/front-night.jpg";
 
 export default function Main() {
@@ -23,58 +23,33 @@ export default function Main() {
 
   return (
     <div className="font-sans bg-gray-50 text-gray-800">
-      {/* Navbar */}
-      {/* <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <h1 className="text-2xl font-bold text-[#F9832B]">📚 Pooja Library</h1>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#about" className="hover:text-[#F9832B] transition">About</a>
-            <a href="#facilities" className="hover:text-[#F9832B] transition">Facilities</a>
-            <a href="#gallery" className="hover:text-[#F9832B] transition">Gallery</a>
-            <a href="#contact" className="hover:text-[#F9832B] transition">Contact</a>
-          </nav>
-          <button
-            className="md:hidden text-2xl text-purple-700"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? "✖" : "☰"}
-          </button>
-        </div>
-        {menuOpen && (
-          <div className="md:hidden bg-purple-100 p-4 space-y-3 text-center">
-            <a href="#about" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>About</a>
-            <a href="#facilities" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>Facilities</a>
-            <a href="#gallery" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>Gallery</a>
-            <a href="#contact" className="block text-[#F9832B] font-medium" onClick={() => setMenuOpen(false)}>Contact</a>
-          </div>
-        )}
-      </header> */}
-
       {/* Hero Section */}
       <section
         className="h-screen flex flex-col justify-center items-center bg-cover bg-center text-white text-center px-4"
         style={{ backgroundImage: `url(${bannerimage})` }}
       >
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl font-bold drop-shadow-lg"
+        <motion.h1
+          className="text-center mt-2 text-3xl md:text-4xl font-extrabold"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+            backgroundSize: "400% 400%",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          animate={{
+            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
         >
           Welcome to Pooja Library
-        </motion.h2>
+        </motion.h1>
         <p className="mt-4 text-lg md:text-xl max-w-xl drop-shadow">
           A peaceful place for reading, learning, and growing your knowledge.
-        </p>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-16 max-w-5xl mx-auto px-4 text-center">
-        <h3 className="text-3xl font-semibold mb-6 text-[#F9832B]">About Us</h3>
-        <p className="text-lg leading-relaxed">
-          Pooja Library is a community-driven space dedicated to readers and
-          learners. Our collection ranges from ancient scriptures to modern-day
-          knowledge, creating a bridge between tradition and innovation.
         </p>
       </section>
 
@@ -88,34 +63,13 @@ export default function Main() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
           {[
-            {
-              icon: <FaTint size={32} className="text-blue-500" />,
-              title: "Water Cooler",
-            },
-            {
-              icon: <FaSnowflake size={32} className="text-cyan-500" />,
-              title: "Air Conditioned",
-            },
-            {
-              icon: <FaWifi size={32} className="text-green-500" />,
-              title: "Free WiFi",
-            },
-            {
-              icon: <FaParking size={32} className="text-indigo-500" />,
-              title: "Parking Space",
-            },
-            {
-              icon: <FaNewspaper size={32} className="text-yellow-500" />,
-              title: "Newspapers",
-            },
-            {
-              icon: <FaVideo size={32} className="text-red-500" />,
-              title: "CCTV Cameras",
-            },
-            {
-              icon: <FaUtensils size={32} className="text-pink-500" />,
-              title: "Nearby Mistan Bhandar",
-            },
+            { icon: <FaSnowflake size={32} className="text-cyan-500" />, title: "Air Conditioned" },
+            { icon: <FaWifi size={32} className="text-green-500" />, title: "Free WiFi" },
+            { icon: <FaParking size={32} className="text-indigo-500" />, title: "Parking Space" },
+            { icon: <FaTint size={32} className="text-blue-500" />, title: "Water Cooler" },
+            { icon: <FaNewspaper size={32} className="text-yellow-500" />, title: "Newspapers" },
+            { icon: <FaVideo size={32} className="text-red-500" />, title: "CCTV Cameras" },
+            { icon: <FaUtensils size={32} className="text-pink-500" />, title: "Nearby Mistan Bhandar" },
           ].map((facility, idx) => (
             <motion.div
               key={idx}
@@ -129,47 +83,24 @@ export default function Main() {
             </motion.div>
           ))}
         </div>
-      </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-16 bg-gray-100">
-        <h3 className="text-3xl font-semibold mb-10 text-center text-[#F9832B]">
-          Gallery
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-          {[1, 2, 3, 4, 5, 6].map((img) => (
-            <motion.div
-              key={img}
-              whileHover={{ scale: 1.05 }}
-              className="overflow-hidden rounded-2xl shadow-lg"
-            >
-              <img
-                src={`https://source.unsplash.com/400x300/?library,books,${img}`}
-                alt="Library pic"
-                className="w-full h-64 object-cover"
-              />
+        {/* 🔹 Motion Buttons after Facilities */}
+        <div className="mt-12 flex justify-center gap-6">
+          {[
+            { name: "Gallery", path: "/gallery" },
+            { name: "Contact", path: "/contact" },
+            { name: "About", path: "/about" },
+          ].map((btn, idx) => (
+            <motion.div key={idx} whileHover={{ scale: 1.1 }}>
+              <Link
+                to={btn.path}
+                className="px-6 py-3 rounded-xl text-lg font-semibold shadow-md bg-gradient-to-r from-orange-400 to-pink-500 text-white hover:opacity-90 transition"
+              >
+                {btn.name}
+              </Link>
             </motion.div>
           ))}
         </div>
-      </section>
-
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="py-16 max-w-4xl mx-auto px-4 text-center"
-      >
-        <h3 className="text-3xl font-semibold mb-6 text-[#F9832B]">
-          Contact Us
-        </h3>
-        <p className="text-lg mb-6">Want to know more? Reach us on WhatsApp!</p>
-        <a
-          href="https://wa.me/916367007879"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-green-500 text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-md hover:bg-green-600 transition"
-        >
-          Chat on WhatsApp
-        </a>
       </section>
 
       {/* Floating Buttons */}
