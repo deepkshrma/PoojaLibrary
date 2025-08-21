@@ -6,9 +6,10 @@ import {
   FaImages,
   FaInfoCircle,
   FaPhoneAlt,
+  FaFilm,
   FaBars,
 } from "react-icons/fa";
-import logoimage from "../assets/images/mandir.jpg";
+import logoimage from "../assets/images/photo.jpg";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Navbar() {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.1, 
+        delay: i * 0.1,
         duration: 0.3,
         ease: "easeOut",
       },
@@ -57,6 +58,12 @@ export default function Navbar() {
             className="hover:text-[#F9832B] transition flex items-center gap-1"
           >
             <FaImages /> Gallery
+          </Link>
+          <Link
+            to="/memories"
+            className="hover:text-[#F9832B] transition flex items-center gap-1"
+          >
+            <FaFilm /> Memories
           </Link>
           <Link
             to="/about"
@@ -107,6 +114,7 @@ export default function Navbar() {
                 {[
                   { to: "/", label: "Home", icon: <FaHome /> },
                   { to: "/gallery", label: "Gallery", icon: <FaImages /> },
+                  { to: "/memories", label: "Memories", icon: <FaFilm /> },
                   { to: "/about", label: "About", icon: <FaInfoCircle /> },
                   { to: "/contact", label: "Contact", icon: <FaPhoneAlt /> },
                 ].map((item, i) => (

@@ -26,6 +26,31 @@ export default function Main() {
         className="h-[60vh] md:h-screen flex flex-col justify-center items-center bg-cover bg-center text-white text-center px-4 "
         style={{ backgroundImage: `url(${bannerimage})` }}
       ></section>
+      {/* <motion.h3 className="text-center mt-4 text-2xl font-bold flex items-center justify-center gap-2 cursor-pointer">
+      
+        <Link to="/latest">
+          <motion.span
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #F97316, #FACC15, #ec4899, #8b5cf6, #22d3ee, #3b82f6)",
+              backgroundSize: "300% 300%",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+            }}
+            animate={{
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            Latest from Library
+          </motion.span>
+        </Link>
+      </motion.h3> */}
 
       {/* Facilities Section */}
       <section
@@ -103,13 +128,14 @@ export default function Main() {
         </div>
 
         {/*  Attractive CTA Section below Facilities */}
-        <div className="mt-16 ">
+        <div className="mt-16">
           <h6 className="text-xl font-semibold text-gray-500 mb-6 pl-6">
             Explore More with Pooja Library
           </h6>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
             {[
               { name: "Gallery", path: "/gallery" },
+              { name: "Memories", path: "/memories" },
               { name: "Contact", path: "/contact" },
               { name: "About", path: "/about" },
             ].map((btn, idx) => (
@@ -117,23 +143,18 @@ export default function Main() {
                 key={idx}
                 animate={{
                   y: [0, -5, 0],
-                  boxShadow: [
-                    "0px 4px 12px rgba(249, 131, 43, 0.2)",
-                    "0px 6px 16px rgba(249, 131, 43, 0.4)",
-                    "0px 4px 12px rgba(249, 131, 43, 0.2)",
-                  ],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 2,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: idx * 0.5,
+                  delay: idx * 0.3,
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
               >
                 <Link
                   to={btn.path}
-                  className="px-6 py-3 rounded-xl text-lg font-semibold 
+                  className="block text-center px-6 py-3 rounded-xl text-lg font-semibold 
                      shadow-md bg-gradient-to-r from-orange-400 to-pink-500 
                      text-white hover:opacity-90 transition"
                 >

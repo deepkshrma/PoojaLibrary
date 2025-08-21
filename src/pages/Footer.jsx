@@ -19,14 +19,6 @@ export default function Footer() {
           <span>@_deepk__shrma</span>
         </a>
       </div>
-
-      {/* 🔹 Latest Link (future use)
-  <Link
-    to="/latest"
-    className="text-orange-400 hover:text-orange-500 transition font-medium"
-  >
-    📢 Latest from Library
-  </Link> */}
     </footer>
   );
 }

@@ -14,7 +14,7 @@ import mistan2 from "../assets/images/mistan2.jpg";
 import jio from "../assets/images/outside-main.jpg";
 import inside1 from "../assets/images/inside1.jpg";
 import inside2 from "../assets/images/inside2.jpg";
-import inside3 from "../assets/images/inside3.jpg";
+import inside3 from "../assets/images/anni1.jpg";
 import inside4 from "../assets/images/inside4.jpg";
 import inside5 from "../assets/images/inside-main.jpg";
 export default function Gallery() {

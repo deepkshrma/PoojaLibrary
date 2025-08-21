@@ -8,7 +8,6 @@ import Contact from "./pages/Contact";
 import Main from "./pages/Main";
 import Footer from "./pages/Footer";
 import ScrollToTop from "./pages/ScrollToTop";
-import Latest from "./pages/Latest";
 
 
 function Allroutes() {
@@ -22,7 +21,7 @@ function Allroutes() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/latest" element={<Latest />} />
+          
           <Route path="/footer" element={<Footer />} />
         </Route>
       </Routes>
